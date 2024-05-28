@@ -1,0 +1,62 @@
+<mat-toolbar color="primary">
+  <button
+    (click)="sideMenu.toggle()"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Example icon-button with heart icon"
+  >
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container>
+  <mat-drawer #sideMenu opened="true" position="start" mode="side">
+    <mat-list>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/articles">
+          <mat-icon>article</mat-icon>
+          Articles
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon>money</mat-icon>
+          Tickets
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/ventes">
+          <mat-icon>attach_money</mat-icon>
+          Ventes
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height: 800px">
+      <router-outlet> </router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

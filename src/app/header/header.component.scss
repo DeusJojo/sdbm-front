@@ -1,0 +1,21 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mat-drawer-container {
+  height: calc(100vh - 64px);
+  overflow: auto;
+}
+
+.mat-drawer {
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  z-index: 999;
+}

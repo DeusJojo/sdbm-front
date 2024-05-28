@@ -1,0 +1,22 @@
+$headerColor: #000;
+
+table {
+  width: 100%;
+  padding: 80px;
+}
+th {
+  background: #000 !important;
+  color: white;
+}
+
+.backgroud-header{
+  background-color: #000;
+}
+
+.mat-row:nth-child(even){
+  background-color: red !important;
+}
+      
+.mat-row:nth-child(odd){
+  background-color: black !important;
+}

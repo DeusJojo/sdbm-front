@@ -1,0 +1,64 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="nomArticle">
+        Nom
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.nomArticle }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="prixAchat">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="prixAchat">
+        prix achat
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.prixAchat }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="volume">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="volume">volume</th>
+      <td mat-cell *matCellDef="let element">{{ element.volume }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="titrage">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="titrage">
+        titrage
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.titrage }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="marque">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="nomMarque">
+        marque
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{
+          element.idMarque?.nomMarque ? element.idMarque.nomMarque : "Aucune"
+        }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="couleur">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="nomCouleur">
+        couleur
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{
+          element.idCouleur?.nomCouleur
+            ? element.idCouleur.nomCouleur
+            : "Aucune"
+        }}
+      </td>
+    </ng-container>
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="displayedColumns"
+    ></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [hidePageSize]="true" showFirstLastButtons> </mat-paginator>
+</div>
