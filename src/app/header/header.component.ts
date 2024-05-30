@@ -4,7 +4,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { Router, RouterOutlet, RouterModule } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
@@ -25,6 +25,6 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class HeaderComponent {
 
-  constructor(private router: Router){}
+  constructor(){}
 
 }

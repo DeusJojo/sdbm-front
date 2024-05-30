@@ -1,8 +1,24 @@
 $headerColor: #000;
 
+.search-name {
+  margin-top: 8%;
+  margin-left: 5%;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.not-found{
+    margin-left: 5%;
+}
+
+button{
+  margin-left: 2%;
+}
+
 table {
   width: 100%;
-  padding: 80px;
+  padding: 5%;
 }
 th {
   background: #000 !important;
@@ -10,17 +26,32 @@ th {
   font-size: 1.2em;
 }
 
-.backgroud-header{
+.backgroud-header {
   background-color: #000;
 }
 
-tr:nth-child(even){
+tr:nth-child(even) {
   background-color: #fcf2e7;
 }
-tr:nth-child(odd){
+tr:nth-child(odd) {
   background-color: #f8dec3;
 }
 
 ::ng-deep .hide-arrow .mat-sort-header-arrow {
   color: #fff;
 }
+
+.ventes{
+  text-align: center;
+  cursor: pointer;
+}
+
+.vente-icon{
+  transition: transform .1s;
+}
+
+.vente-icon:hover{
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2);
+  }
