@@ -8,11 +8,20 @@ $headerColor: #000;
   width: 100%;
 }
 
-.not-found{
-    margin-left: 5%;
+.mat-row {
+  font-size: 1.5em;
 }
 
-button{
+.filter {
+  margin-left: 5%;
+  width: 90%;
+}
+
+.not-found {
+  margin-left: 5%;
+}
+
+button {
   margin-left: 2%;
 }
 
@@ -41,17 +50,18 @@ tr:nth-child(odd) {
   color: #fff;
 }
 
-.ventes{
+.ventes {
   text-align: center;
   cursor: pointer;
 }
 
-.vente-icon{
-  transition: transform .1s;
+.vente-icon {
+  transition: transform 0.1s;
 }
 
-.vente-icon:hover{
+.vente-icon:hover {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.2);
-  }
+  background-color: #f8dec3;
+}

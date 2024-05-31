@@ -30,7 +30,8 @@ import { Router } from '@angular/router';
 export class ArticlesComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild('searchInput') input!: ElementRef;
+  @ViewChild('searchInput') searchInput!: ElementRef;
+  @ViewChild('filterInput') filterInput!: ElementRef;
 
   private baseUrl: string = 'http://localhost:8090';
 
@@ -58,6 +59,11 @@ export class ArticlesComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   redirectToVente(nomArticle: String){
     this.router.navigate(["/ventes"], {queryParams: {name: nomArticle}});
   }
@@ -73,8 +79,11 @@ export class ArticlesComponent implements OnInit {
   }
 
   getAllArticles() {
-    if(this.input){
-      this.input.nativeElement.value = "";
+    if(this.searchInput){
+      this.searchInput.nativeElement.value = "";
+    }
+    if(this.filterInput){
+      this.filterInput.nativeElement.value = "";
     }
     this.http.get(this.baseUrl + '/api/articles').subscribe((res: any) => {
       if (res) {

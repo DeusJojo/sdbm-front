@@ -7,7 +7,7 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <span>SDBM</span>
   <span class="example-spacer"></span>
   <button
     mat-icon-button
@@ -29,7 +29,7 @@
   <mat-drawer #sideMenu opened="true" position="start" mode="side">
     <mat-list>
       <mat-list-item>
-        <button mat-button>
+        <button mat-button routerLink="/">
           <mat-icon>dashboard</mat-icon>
           Dashboard
         </button>
@@ -38,12 +38,6 @@
         <button mat-button routerLink="/articles">
           <mat-icon>article</mat-icon>
           Articles
-        </button>
-      </mat-list-item>
-      <mat-list-item>
-        <button mat-button>
-          <mat-icon>money</mat-icon>
-          Tickets
         </button>
       </mat-list-item>
       <mat-list-item>

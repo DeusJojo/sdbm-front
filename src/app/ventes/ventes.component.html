@@ -1,3 +1,5 @@
+<h1>Total des ventes par années et par articles</h1>
+
 <div class="mat-elevation-z8">
 
     <form class="example-form" #articleForm="ngForm">
@@ -5,6 +7,7 @@
           <mat-label>Recherche par nom d'article</mat-label>
           <input
             required
+            [(ngModel)]="articleName"
             matInput
             placeholder="Leffe Triple"
             name="articleName"
@@ -14,13 +17,15 @@
             Le nom de l'article est requis.
           </mat-error>
         </mat-form-field>
-        <button mat-flat-button color="primary" [disabled]="articleForm.invalid">
+        <button mat-flat-button color="primary" [disabled]="articleForm.invalid" (click)="getVenteByName()">
           Rechercher
         </button>
-        <button mat-flat-button color="primary">
-          Réinitialiser
-        </button>
       </form>
+
+      <mat-form-field class="filter">
+        <mat-label>Filtre</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Blonde" #input>
+      </mat-form-field>
   
     <table mat-table [dataSource]="dataSource" matSort>
       <!--- Note that these columns can be defined in any order.
